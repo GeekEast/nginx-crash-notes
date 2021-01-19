@@ -1,0 +1,14 @@
+{
+  "name": "nodeapp",
+  "version": "1.0.0",
+  "description": "sample node app",
+  "main": "src/index.js",
+  "author": "james",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "start": "node src/index.js"
+  }
+}
