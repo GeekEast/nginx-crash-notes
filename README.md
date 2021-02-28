@@ -30,7 +30,7 @@ To reload nginx:
 
 - `nginx.conf` v1
 
-```json
+```
 http {
     server {
         listen 8080;
@@ -44,7 +44,7 @@ events {
 
 - `nginx conf` v2: static web server
 
-```json
+```
 http {
     server {
         listen 8080;
@@ -71,7 +71,7 @@ try visit `localhost:8080` , `localhost:8080/site1` , `localhost:8080/site2`
 
 - `nginx.conf` v3
 
-```json
+```
 http {
     server {
         listen 8080;
@@ -95,7 +95,7 @@ create a folder `/Users/james/Documents/images` , then visit `localhost:8080/ima
 
 - `nginx.conf` v4
 
-```json
+```
 http {
     server {
         listen 8080;
@@ -122,7 +122,7 @@ events {
 
 - `nginx.conf` v4: redirecting
 
-```json
+```
 http {
     server {
         listen 8080;
@@ -163,7 +163,7 @@ events {
 
 ### Layer 7 (http) Proxy
 
-```json
+```
 docker build -t nodeapp .
 docker run -p 2222:9999 -e APPID=2222 -d nodeapp
 docker run -p 3333:9999 -e APPID=3333 -d nodeapp
@@ -173,7 +173,7 @@ docker run -p 5555:9999 -e APPID=5555 -d nodeapp
 
 - `nginx.conf` v5
 
-```json
+```
 http {
 		# round-robin load balancer
     upstream allbackend {
@@ -195,7 +195,7 @@ events {}
 
 - `nginx.conf` v6
 
-```json
+```
 http {
     upstream allbackend {
 				# another load balancing method: same client ip always get the same server response
@@ -222,7 +222,7 @@ events {
 
 - `nginx.conf` v7: **multiple** upstreams is supported in **Layer 7** (http), but not at **Layer 4** (tcp)
 
-```json
+```
 http {
     upstream allbackend {
         # another load balancing method: same client ip always get the same server response
@@ -268,7 +268,7 @@ events {
 
 - `nginx.conf` v8
 
-```json
+```
 stream {
     upstream allbackend {
         server 127.0.0.1:2222;
